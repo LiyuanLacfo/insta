@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Pix2Pix Experiment</title>
+  </head>
+  <body>
+      <h1 class="text-center"> Pix2Pix </h1>
+      <hr class="mt-2 mb-5">
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+            {% for image in images1 %}
+              <div class="col-sm">
+                  <img class="img-fluid img-thumbnail" src="{{ image.cover.url}}">
+              </div>
+            {% endfor %}
+            <!-- <div class="col-sm offset-md-2""> -->
+                <button class="btn btn-outline-primary btn-sm" onclick="location.href='{% url 'script' %}'">Denoise</button><hr>
+            <!-- </div> -->
+            {% for image in images2 %}
+              <div class="col-sm">
+                  <img src="{{ image.cover.url}}">
+              </div>
+            {% endfor %}
+        </div>
+        <hr class="mt-2 mb-5">
+        <!-- <div class="row align-items-center"> -->
+          <!-- <div class="col align-self-center"> -->
+              <button class="btn btn-outline-success" onclick="location.href='{% url 'add_post' %}'">Upload a noisy image</button>
+          <!-- </div> -->
+        <!-- </div> -->
+      </div>
+  </body>
+</html>
