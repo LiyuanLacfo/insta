@@ -25,7 +25,7 @@ SECRET_KEY = 'd3-i)__h@_rbd^rpikqcqm^as&pw#da_&=6^z@6@wu5n24t_sn'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['liyuan.me', '3.91.147.89', '127.0.0.1']
+ALLOWED_HOSTS = ['www.liyuan.me', 'liyuan.me', '3.212.181.237', '127.0.0.1']
 
 
 # Application definition
