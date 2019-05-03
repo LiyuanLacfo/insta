@@ -66,7 +66,7 @@ def denoise(image_path, new_image_name):
     model_path = os.path.join(settings.MEDIA_ROOT, model_name)
     model.load_state_dict(torch.load(model_path, map_location='cpu'))
     model.eval()
-    my_transforms = transforms.Compose([transforms.ToTensor(), transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
+    my_transforms = transforms.Compose([transforms.Resize((256, 256)), transforms.ToTensor(),  transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))])
     my_dataset = MyDataset(image_path, my_transforms)
     new_img_path = os.path.join(settings.MEDIA_ROOT, new_image_name)
     for i in range(len(my_dataset)):
